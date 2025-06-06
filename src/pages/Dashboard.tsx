@@ -122,7 +122,8 @@ const Dashboard = () => {
     );
   }
 
-  if (!userProfile) {
+  // CORREÇÃO: Verificar se o usuário tem prioridades definidas
+  if (!userProfile || !userProfile.priorities || userProfile.priorities.every(p => !p)) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-100 via-violet-50 to-purple-200 flex items-center justify-center">
         <div className="text-center space-y-4">
